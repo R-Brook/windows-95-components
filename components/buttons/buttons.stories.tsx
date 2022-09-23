@@ -6,14 +6,20 @@ export default {
   title: "Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: "color" },
+    width: {
+      options: ["wide", "tight"],
+      control: { type: "radio" },
+    },
+    children: { control: "text" },
   },
 } as ComponentMeta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}></Button>
+)
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  label: "Button",
+  children: "Button",
+  width: "tight",
 }
