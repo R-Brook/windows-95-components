@@ -17,4 +17,3 @@ export const Button: FC<ButtonProps> = ({ width, children }) => {
     </button>
   )
 }
-// px-10 py-1
