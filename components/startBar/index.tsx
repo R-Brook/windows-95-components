@@ -19,11 +19,14 @@ export const StartBar: FC<StartBarProps> = ({}) => {
         </span>
         <span className="text-xl">Start</span>
       </Button>
-      <div className="block px-10 border-l-4 border-r-4 mx-1 border-gray-dark font-bold">
-        icons
+      <div className="shadow-vertical-line w-1 mx-0.5 mt-0.5" />
+      <div className="block px-10 mx-1 mt-0.5 font-bold">icons</div>
+      <div className="shadow-vertical-line w-1 mt-0.5" />
+      <div className="block px-10 mx-1 mt-0.5 font-bold flex-grow">
+        programmes
       </div>
-
-      <div className="block bg-gray border-2 border-b-gray-light border-r-gray-light border-l-gray-dark border-t-gray-dark ml-auto my-0.5 px-3 py-0.5 text-xl">
+      <div className="shadow-vertical-line w-1 mt-0.5 ml-auto mx-0.5" />
+      <div className="block bg-gray border-2 border-b-gray-light border-r-gray-light border-l-gray-dark border-t-gray-dark m-0 my-0.5 px-3 py-0.5 text-xl flex-initial">
         8:06 PM
       </div>
     </div>
