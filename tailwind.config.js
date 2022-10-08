@@ -15,6 +15,15 @@ module.exports = {
       "gray-dark": "#273444",
       gray: "#C0C0C0",
       "gray-light": "#E5EEED",
+      "gray-dark": "#979797",
+    },
+    fontFamily: {
+      sans: ["windows regular", "sans-serif"],
+      mono: ['"Courier New"', "monospace"],
+    },
+    fontWeight: {
+      normal: "400",
+      bold: "700",
     },
   },
   plugins: [],
