@@ -13,11 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <h1 className="underline">Windows 95 Components</h1>
-        <Button width={"tight"}>Tight button</Button>
-        <Button width={"wide"}>Wide button</Button>
-        <StartBar />
+        <Button width="wide">Foo</Button>
       </Container>
+      <StartBar />
     </>
   )
 }

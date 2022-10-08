@@ -5,7 +5,20 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        540: "35rem",
+      },
+      borderWidth: {
+        3: "3px",
+      },
+      boxShadow: {
+        button:
+          "-2px -2px 0px 0px rgb(0, 0, 0) inset, 2px 2px 0px 0px rgb(254, 254, 254) inset, -4px -4px 0px 0px rgb(130, 130, 130) inset",
+        "button-active":
+          "-2px -2px 0px 0px rgb(254, 254, 254) inset, 3px 3px 0px 0px rgb(0, 0, 0) inset",
+      },
+    },
     colors: {
       blue: "#1fb6ff",
       black: "#000000",
