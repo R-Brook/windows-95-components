@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import Image from "next/image"
-import imageFile from "./assets/start-logo.png"
 import { Button } from "../buttons"
+import { VerticalDivider } from "../divider"
 export interface StartBarProps {
   //primary: boolean
 }
@@ -19,13 +19,13 @@ export const StartBar: FC<StartBarProps> = ({}) => {
         </span>
         <span className="text-xl">Start</span>
       </Button>
-      <div className="shadow-vertical-line w-1 mx-0.5 mt-0.5" />
+      <VerticalDivider />
       <div className="block px-10 mx-1 mt-0.5 font-bold">icons</div>
-      <div className="shadow-vertical-line w-1 mt-0.5" />
+      <VerticalDivider />
       <div className="block px-10 mx-1 mt-0.5 font-bold flex-grow">
         programmes
       </div>
-      <div className="shadow-vertical-line w-1 mt-0.5 ml-auto mx-0.5" />
+      <VerticalDivider />
       <div className="block bg-gray border-2 border-b-gray-light border-r-gray-light border-l-gray-dark border-t-gray-dark m-0 my-0.5 px-3 py-0.5 text-xl flex-initial">
         8:06 PM
       </div>
