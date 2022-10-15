@@ -1,3 +1,4 @@
+import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { PopupWindow } from "."
 
@@ -11,7 +12,9 @@ export default {
 } as ComponentMeta<typeof PopupWindow>
 
 const Template: ComponentStory<typeof PopupWindow> = (args) => (
-  <PopupWindow {...args}></PopupWindow>
+  <div className="relative h-720">
+    <PopupWindow {...args}></PopupWindow>
+  </div>
 )
 
 export const Primary = Template.bind({})

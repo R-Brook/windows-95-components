@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       spacing: {
         540: "35rem",
+        720: "45rem",
       },
       borderWidth: {
         3: "3px",
@@ -22,10 +23,10 @@ module.exports = {
       },
     },
     colors: {
-      blue: "#000c73",
+      blue: "#000C73",
       black: "#000000",
-      orange: "#ff7849",
-      green: "#13ce66",
+      orange: "#FF7849",
+      green: "#13CE66",
       "green-blue": "#008080",
       "gray-dark": "#273444",
       gray: "#C0C0C0",
