@@ -22,7 +22,7 @@ module.exports = {
       },
     },
     colors: {
-      blue: "#1fb6ff",
+      blue: "#000c73",
       black: "#000000",
       orange: "#ff7849",
       green: "#13ce66",
@@ -31,6 +31,7 @@ module.exports = {
       gray: "#C0C0C0",
       "gray-light": "#E5EEED",
       "gray-dark": "#979797",
+      white: "#FFFFFF",
     },
     fontFamily: {
       sans: ["windows regular", "sans-serif"],
