@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       spacing: {
         540: "35rem",
+        608: "38rem",
         720: "45rem",
       },
       borderWidth: {

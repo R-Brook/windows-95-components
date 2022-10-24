@@ -12,7 +12,7 @@ export const PopupWindow = ({ title, children }: any) => {
 
   return (
     <Draggable bounds="parent" handle=".handle">
-      <div className="block bg-gray shadow-button p-1.5 w-720">
+      <div className="block absolute bg-gray shadow-button p-1.5 w-720 z-50 left-32 top-20 ">
         <div className="flex justify-between pl-1.5 bg-blue text-white handle">
           {title}
           <div className="text-black flex gap-x-1">
