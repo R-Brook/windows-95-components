@@ -4,6 +4,7 @@ import Head from "next/head"
 import { Container } from "../components/container"
 import { PopupWindow } from "../components/popupWindow"
 import { StartBar } from "../components/startBar"
+import { DesktopIcon } from "components/desktopIcon"
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,16 @@ const Home: NextPage = () => {
       </Head>
       <Container>
         <PopupWindow title="title">Lorem ipsum</PopupWindow>
+        <DesktopIcon
+          image="/images/icons/my-computer.ico"
+          alt="My Computer"
+          name="My Computer"
+        />
+        <DesktopIcon
+          image="/images/icons/my-documents-cropped.png"
+          alt="My Documents"
+          name="My Documents"
+        />
       </Container>
       <StartBar />
     </>
