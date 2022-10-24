@@ -1,0 +1,42 @@
+import React from "react"
+import { Button } from "../buttons"
+import Draggable from "react-draggable"
+
+export interface PopupWindowProps {
+  title: string
+}
+
+export const PopupWindow = ({ title, children }: any) => {
+  const menu = ["file", "edit", "view", "tools", "help"]
+  const toolBarButtons = ["_", "O", "x"]
+
+  return (
+    <Draggable bounds="parent" handle=".handle">
+      <div className="block absolute bg-gray shadow-button p-1.5 w-720 z-50 left-32 top-20 ">
+        <div className="flex justify-between pl-1.5 bg-blue text-white handle">
+          {title}
+          <div className="text-black flex gap-x-1">
+            {toolBarButtons.map((item) => (
+              <Button width="tight" key="item" className="p-3">
+                {item}
+              </Button>
+            ))}
+          </div>
+        </div>
+        <ul className="flex gap-x-3 ml-2">
+          {menu.map((mapItem) => (
+            <li key={mapItem}>
+              <button>
+                <span className=" underline ">
+                  {mapItem.charAt(0).toUpperCase()}
+                </span>
+                {mapItem.slice(1)}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="bg-white">{children}</div>
+      </div>
+    </Draggable>
+  )
+}
