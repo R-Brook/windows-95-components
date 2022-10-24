@@ -4,7 +4,8 @@ import Head from "next/head"
 import { Container } from "../components/container"
 import { PopupWindow } from "../components/popupWindow"
 import { StartBar } from "../components/startBar"
-import { DesktopIcon } from "components/desktopIcon"
+import { DesktopIcon } from "../components/desktopIcon"
+import { RecycleBin } from "../components/desktopIcon/RecycleBin"
 
 const Home: NextPage = () => {
   return (
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
           alt="My Documents"
           name="My Documents"
         />
+        <RecycleBin />
       </Container>
       <StartBar />
     </>
