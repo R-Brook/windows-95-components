@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import Image from "next/image"
 import { Button } from "../buttons"
 import { VerticalDivider } from "../divider"
+
 export interface StartBarProps {
   //primary: boolean
 }
@@ -20,7 +21,23 @@ export const StartBar: FC<StartBarProps> = ({}) => {
         <span className="text-xl">Start</span>
       </Button>
       <VerticalDivider />
-      <div className="block px-10 mx-1 mt-0.5 font-bold">icons</div>
+      <div className="flex items-center mx-1 mt-0.5 gap-2 ">
+        <span className="relative h-7 w-7">
+          <Image
+            src="/images/icons/desktop.png"
+            alt="Desktop icon"
+            layout="fill"
+          />
+        </span>
+        <span className="relative h-7 w-7">
+          <Image
+            src="/images/icons/satellite.png"
+            alt="Desktop icon"
+            layout="fill"
+          />
+        </span>
+      </div>
+
       <VerticalDivider />
       <div className="block px-10 mx-1 mt-0.5 font-bold flex-grow">
         programmes
