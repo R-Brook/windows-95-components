@@ -6,8 +6,11 @@ import { PopupWindow } from "../components/popupWindow"
 import { StartBar } from "../components/startBar"
 import { DesktopIcon } from "../components/desktopIcon"
 import { RecycleBin } from "../components/desktopIcon/RecycleBin"
+import { Notepad } from "components/notepad"
 
 const Home: NextPage = () => {
+  const [notepadOpen, setNotepadOpen] = React.useState(false)
+
   return (
     <>
       <Head>
@@ -16,7 +19,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <PopupWindow title="title">Lorem ipsum</PopupWindow>
         <DesktopIcon
           image="/images/icons/my-computer.ico"
           alt="My Computer"
@@ -28,6 +30,13 @@ const Home: NextPage = () => {
           name="My Documents"
         />
         <RecycleBin />
+        <DesktopIcon
+          image="/images/icons/notepad.ico"
+          alt="Notepad"
+          name="Notepad"
+          onClick={() => setNotepadOpen(true)}
+        />
+        {notepadOpen && <Notepad />}
       </Container>
       <StartBar />
     </>

@@ -1,13 +1,14 @@
 import React from "react"
 import { Button } from "../buttons"
 import Draggable from "react-draggable"
+import { Menu } from "../menu"
 
 export interface PopupWindowProps {
   title: string
 }
 
 export const PopupWindow = ({ title, children }: any) => {
-  const menu = ["file", "edit", "view", "tools", "help"]
+  // To be replaced with icons
   const toolBarButtons = ["_", "O", "x"]
 
   return (
@@ -23,18 +24,9 @@ export const PopupWindow = ({ title, children }: any) => {
             ))}
           </div>
         </div>
-        <ul className="flex gap-x-3 ml-2">
-          {menu.map((mapItem) => (
-            <li key={mapItem}>
-              <button>
-                <span className=" underline ">
-                  {mapItem.charAt(0).toUpperCase()}
-                </span>
-                {mapItem.slice(1)}
-              </button>
-            </li>
-          ))}
-        </ul>
+
+        <Menu />
+
         <div className="bg-white">{children}</div>
       </div>
     </Draggable>

@@ -1,37 +1,69 @@
-export const MENUKEYS = ["file", "edit", "view", "tools", "help"]
-
 export const MENU = {
   file: [
     {
-      name: "empty",
-      action: () => console.log("foo"),
+      name: "new",
+      action: () => console.log("new"),
     },
     {
-      name: "foo",
-      action: () => console.log("file closed"),
+      name: "open",
+      action: () => console.log("open"),
+    },
+    {
+      name: "save",
+      action: () => console.log("save"),
+    },
+    {
+      name: "save as",
+      action: () => console.log("save as"),
+    },
+    {
+      name: "page setup",
+      action: () => console.log("page setup"),
+    },
+    {
+      name: "print",
+      action: () => console.log("print"),
+    },
+    {
+      name: "exit",
+      action: () => console.log("exit"),
     },
   ],
   edit: [
     {
-      name: "empty",
-      action: () => console.log("foo"),
+      name: "undo",
+      action: () => console.log("undo"),
     },
     {
-      name: "foo",
-      action: () => console.log("file closed"),
+      name: "cut",
+      action: () => console.log("cut"),
+    },
+    {
+      name: "copy",
+      action: () => console.log("copy"),
+    },
+    {
+      name: "paste",
+      action: () => console.log("paste"),
+    },
+    {
+      name: "delete",
+      action: () => console.log("delete"),
+    },
+    {
+      name: "select all",
+      action: () => console.log("select all"),
+    },
+    {
+      name: "time/date",
+      action: () => console.log("time/date"),
+    },
+    {
+      name: "word wrap",
+      action: () => console.log("word wrap"),
     },
   ],
-  view: [
-    {
-      name: "empty",
-      action: () => console.log("foo"),
-    },
-    {
-      name: "foo",
-      action: () => console.log("file closed"),
-    },
-  ],
-  tools: [
+  search: [
     {
       name: "empty",
       action: () => console.log("foo"),
@@ -52,56 +84,3 @@ export const MENU = {
     },
   ],
 }
-
-export const file = [
-  {
-    name: "empty",
-    action: () => console.log("foo"),
-  },
-  {
-    name: "close",
-    action: () => `setControlMenuVisible(!controlMenuVisible)`,
-  },
-]
-
-export const edit = [
-  {
-    name: "empty",
-    action: () => console.log("foo"),
-  },
-  {
-    name: "close",
-    action: () => `setControlMenuVisible(!controlMenuVisible)`,
-  },
-]
-
-export const view = [
-  {
-    name: "empty",
-    action: () => console.log("foo"),
-  },
-  {
-    name: "close",
-    action: () => `setControlMenuVisible(!controlMenuVisible)`,
-  },
-]
-export const tools = [
-  {
-    name: "empty",
-    action: () => console.log("foo"),
-  },
-  {
-    name: "close",
-    action: () => `setControlMenuVisible(!controlMenuVisible)`,
-  },
-]
-export const help = [
-  {
-    name: "empty",
-    action: () => console.log("foo"),
-  },
-  {
-    name: "close",
-    action: () => `setControlMenuVisible(!controlMenuVisible)`,
-  },
-]
