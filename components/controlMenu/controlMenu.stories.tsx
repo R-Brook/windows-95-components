@@ -3,11 +3,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ControlMenu } from "."
 
 export default {
-  title: "ControlMenu",
+  title: "UI Elements/Simple Control Menu",
   component: ControlMenu,
   argTypes: {
     //title: { control: "text" },
     //children: { control: "text" },
+  },
+  args: {
+    //children: "PopupWindow",
+    //title: "Exploring - C:\\",
   },
 } as ComponentMeta<typeof ControlMenu>
 
@@ -15,6 +19,10 @@ const foo = [
   {
     name: "restore",
     action: () => console.log("restore"),
+  },
+  {
+    name: "exit",
+    action: () => console.log("exit"),
   },
 ]
 
@@ -24,8 +32,4 @@ const Template: ComponentStory<typeof ControlMenu> = (args) => (
   </div>
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
-  //children: "PopupWindow",
-  //title: "Exploring - C:\\",
-}
+export const SimpleControlMenu = Template.bind({})

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { VerticalDivider } from "."
 
 export default {
-  title: "Divider",
+  title: "UI Elements/Divider",
   component: VerticalDivider,
   argTypes: {},
 } as ComponentMeta<typeof VerticalDivider>

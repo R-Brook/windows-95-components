@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Button } from "."
 
 export default {
-  title: "Button",
+  title: "UI Elements/Single Button",
   component: Button,
   argTypes: {
     width: {
@@ -12,14 +12,14 @@ export default {
     },
     children: { control: "text" },
   },
+  args: {
+    children: "Button",
+    width: "wide",
+  },
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => (
   <Button {...args}></Button>
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
-  children: "Button",
-  width: "tight",
-}
+export const SingleButton = Template.bind({})

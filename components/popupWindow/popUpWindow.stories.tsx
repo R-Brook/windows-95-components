@@ -3,11 +3,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { PopupWindow } from "."
 
 export default {
-  title: "PopupWindow",
+  title: "UI Elements/Generic Popup Window",
   component: PopupWindow,
   argTypes: {
     title: { control: "text" },
     children: { control: "text" },
+  },
+  args: {
+    children: "Lorem ipsum",
+    title: "Exploring - C:\\",
   },
 } as ComponentMeta<typeof PopupWindow>
 
@@ -17,8 +21,4 @@ const Template: ComponentStory<typeof PopupWindow> = (args) => (
   </div>
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
-  children: "PopupWindow",
-  title: "Exploring - C:\\",
-}
+export const GenericPopupWindow = Template.bind({})
