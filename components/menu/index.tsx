@@ -27,8 +27,8 @@ export const Menu: FC<MenuProps> = ({}) => {
                 </span>
                 {mapItem.slice(1)}
                 {controlMenuVisible === mapItem && (
-                  /* @TODO: Fix typing of menuItems */
-
+                  // @TODO: Refactor next line
+                  // eslint-disable-next-line
                   <ControlMenu menuItems={MENU[`${mapItem}`]} />
                 )}
               </button>
