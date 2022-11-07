@@ -3,14 +3,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { RecycleBin } from "."
 
 export default {
-  title: "RecycleBin",
+  title: "UI Elements/Desktop Recycle Bin",
   component: RecycleBin,
 } as ComponentMeta<typeof RecycleBin>
 
-const Template: ComponentStory<typeof RecycleBin> = () => (
-  <div className="relative h-720">
-    <RecycleBin />
-  </div>
-)
+const Template: ComponentStory<typeof RecycleBin> = () => <RecycleBin />
 
-export const Primary = Template.bind({})
+export const DesktopRecycleBin = Template.bind({})

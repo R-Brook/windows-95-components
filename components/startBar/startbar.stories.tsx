@@ -3,16 +3,16 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { StartBar } from "."
 
 export default {
-  title: "Start Bar",
+  title: "UI Elements/Start Bar Component",
   component: StartBar,
   argTypes: {},
+  args: {
+    label: "Start Bar",
+  },
 } as ComponentMeta<typeof StartBar>
 
 const Template: ComponentStory<typeof StartBar> = (args) => (
   <StartBar {...args} />
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
-  label: "Start Bar",
-}
+export const StartBarComponent = Template.bind({})
