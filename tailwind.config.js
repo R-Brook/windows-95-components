@@ -29,10 +29,10 @@ module.exports = {
       orange: "#FF7849",
       green: "#13CE66",
       "green-blue": "#008080",
-      "gray-dark": "#273444",
       gray: "#C0C0C0",
-      "gray-light": "#E5EEED",
-      "gray-dark": "#979797",
+      "grey-green": "#E5EEED",
+      "grey-light": "#E7E7E7",
+      "grey-dark": "#979797",
       white: "#FFFFFF",
     },
     fontFamily: {
