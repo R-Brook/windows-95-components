@@ -1,4 +1,5 @@
 import React from "react"
+import cx from "classnames"
 import { Button } from "../buttons"
 import Draggable from "react-draggable"
 import { Menu } from "../menu"
@@ -16,10 +17,12 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
   const [notePadMinimise, setNotePadMinimise] = React.useState(false)
 
   const handleMinimise = () => {
+    setNotePadMinimise(true)
     console.log("minimize " + notePadMinimise)
   }
 
   const handleMaximise = () => {
+    setNotePadMaximise(!notePadMaximise)
     console.log("maximise " + notePadMaximise)
   }
 
@@ -42,9 +45,18 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
   ]
 
   return (
-    <Draggable bounds="parent" handle=".handle" nodeRef={nodeRef}>
+    <Draggable
+      bounds="parent"
+      handle=".handle"
+      //disabled={notePadMaximise}
+      nodeRef={nodeRef}
+    >
       <div
-        className="block absolute bg-gray shadow-button p-1.5 w-720 z-50 left-32 top-20"
+        className={cx(
+          "block absolute bg-gray shadow-button p-1.5 z-50 left-32 top-20" +
+            " " +
+            (notePadMaximise ? "top-0 left-0 right-0 bottom-0 " : "w-720")
+        )}
         ref={nodeRef}
       >
         <div className="flex justify-between pl-1.5 bg-blue text-white handle">
@@ -78,14 +90,18 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
         </div>
 
         <Menu />
-
-        <textarea
-          id="area"
-          name="area"
-          cols={106}
-          rows={10}
-          defaultValue={defaultValue}
-        />
+        <div className="relative">
+          <textarea
+            id="area"
+            name="area"
+            cols={notePadMaximise ? 153 : 106}
+            rows={notePadMaximise ? 22 : 10}
+            defaultValue={defaultValue}
+            className={cx(
+              "flex" + " " + notePadMaximise ? "resize-none" : "resize"
+            )}
+          />
+        </div>
       </div>
     </Draggable>
   )
