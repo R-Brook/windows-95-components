@@ -43,7 +43,7 @@ export const StartBar: FC<StartBarProps> = ({}) => {
         programmes
       </div>
       <VerticalDivider />
-      <div className="block bg-gray border-2 border-b-gray-light border-r-gray-light border-l-gray-dark border-t-gray-dark m-0 my-0.5 px-3 py-0.5 text-xl flex-initial">
+      <div className="block bg-gray border-2 border-b-grey-light border-r-grey-light border-l-grey-dark border-t-grey-dark m-0 my-0.5 px-3 py-0.5 text-xl flex-initial">
         8:06 PM
       </div>
     </div>

@@ -4,6 +4,7 @@ import { Button } from "../buttons"
 import Draggable from "react-draggable"
 import { Menu } from "../menu"
 import Image from "next/image"
+import { VerticalDivider } from "components/divider"
 
 export interface PopupWindowProps {
   title: string
@@ -53,7 +54,7 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
     >
       <div
         className={cx(
-          "block absolute bg-gray shadow-button p-1.5 z-50 left-32 top-20" +
+          "block absolute bg-gray shadow-button p-1.5 pl-1 z-50 left-32 top-20" +
             " " +
             (notePadMaximise ? "top-0 left-0 right-0 " : "w-720")
         )}
@@ -90,85 +91,93 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
         </div>
 
         <Menu />
-        <div className="relative flex">
-          <textarea
-            id="area"
-            name="area"
-            cols={notePadMaximise ? 152 : 103}
-            rows={notePadMaximise ? 25 : 10}
-            defaultValue={defaultValue}
-            className={cx(
-              "flex bg-black" + " " + notePadMaximise
-                ? "resize-none p-1 leading-5"
-                : "resize p-1"
-            )}
-          />
-          <div className=" w-6 bg-grey-light flex flex-col mr-1">
-            <Button
-              width="tight"
-              className="relative w-7 h-7 p-2 flex items-center justify-center"
-            >
-              <Image
-                src={"/images/icons/functional-arrow-disabled.png"}
-                alt={""}
-                width="15px"
-                height="18px"
-                className="relative -rotate-90"
-              />
-            </Button>
+        <div className="border-t-black border-l-black border-r-white border-b-white border-2">
+          <div className="relative flex">
+            <textarea
+              id="area"
+              name="area"
+              cols={notePadMaximise ? 152 : 103}
+              rows={notePadMaximise ? 25 : 10}
+              defaultValue={defaultValue}
+              className={cx(
+                "flex bg-black shadow-button-active" + " " + notePadMaximise
+                  ? "resize-none p-1 leading-5"
+                  : "resize p-1"
+              )}
+            />
+            <div className="w-7 bg-grey-light flex flex-col">
+              <Button
+                width="tight"
+                className="relative w-7 h-7 p-2 flex items-center justify-center"
+              >
+                <Image
+                  src={"/images/icons/functional-arrow-disabled.png"}
+                  alt={""}
+                  width="15px"
+                  height="18px"
+                  className="relative -rotate-90"
+                />
+              </Button>
 
-            {/*
+              {/*
             Scrollbar
             <Button
               width="tight"
               className="relative w-7 h-32 flex flex-center"
             />*/}
 
-            <Button
-              width="tight"
-              className="relative w-7 h-7 p-2 flex items-center justify-center mt-auto"
-            >
-              <Image
-                src={"/images/icons/functional-arrow-disabled.png"}
-                alt={""}
-                width="15px"
-                height="18px"
-                className="relative rotate-90"
-              />
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex">
-          <div className="h-6 flex justify-between bg-grey-light grow">
-            <Button
-              width="tight"
-              className="relative w-7 h-7 p-2 flex items-center justify-center"
-            >
-              <Image
-                src={"/images/icons/functional-arrow-disabled.png"}
-                alt={""}
-                width="15px"
-                height="18px"
-                className="relative rotate-180"
-              />
-            </Button>
-
-            <Button
-              width="tight"
-              className="relative w-7 h-7 p-2 flex items-center justify-center"
-            >
-              <Image
-                src={"/images/icons/functional-arrow-disabled.png"}
-                alt={""}
-                width="15px"
-                height="18px"
-                className="relative"
-              />
-            </Button>
+              <Button
+                width="tight"
+                className="relative w-7 h-7 p-2 flex items-center justify-center mt-auto"
+              >
+                <Image
+                  src={"/images/icons/functional-arrow-disabled.png"}
+                  alt={""}
+                  width="15px"
+                  height="18px"
+                  className="relative rotate-90"
+                />
+              </Button>
+            </div>
           </div>
 
-          <div className="relative w-7 h-7 flex flex-center ml-auto bg-gray"></div>
+          <div className="flex">
+            <div className="h-7 flex justify-between bg-grey-light grow">
+              <Button
+                width="tight"
+                className="relative w-7 h-7 p-2 flex items-center justify-center"
+              >
+                <Image
+                  src={"/images/icons/functional-arrow-disabled.png"}
+                  alt={""}
+                  width="15px"
+                  height="18px"
+                  className="relative rotate-180"
+                />
+              </Button>
+
+              <Button
+                width="tight"
+                className="relative w-7 h-7 p-2 flex items-center justify-center"
+              >
+                <Image
+                  src={"/images/icons/functional-arrow-disabled.png"}
+                  alt={""}
+                  width="15px"
+                  height="18px"
+                  className="relative"
+                />
+              </Button>
+            </div>
+
+            <div className="relative w-7 h-7 flex flex-center ml-auto overflow-hidden bg-gray">
+              <div className="flex rotate-45 absolute -bottom-5 right-0 top-0 left:0">
+                <div className="shadow-vertical-line w-1 mr-px rotate-180" />
+                <div className="shadow-vertical-line w-1 mr-px rotate-180" />
+                <div className="shadow-vertical-line w-1 mr-px rotate-180" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Draggable>

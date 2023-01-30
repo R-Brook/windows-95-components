@@ -12,7 +12,7 @@ export const Menu: FC<MenuProps> = ({}) => {
   return (
     <>
       <div>
-        <ul className="flex gap-x-3 ml-2 py-1">
+        <ul className="flex gap-x-3 ml-2 py-0.5">
           {Object.keys(MENU).map((mapItem) => (
             <li key={mapItem}>
               <button
