@@ -54,7 +54,7 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
               layout="fill"
             />
           </div>
-          <span>{title}</span>
+          <h1>{title}</h1>
           <div className="text-black flex gap-x-1 ml-auto">
             <TaskButton
               image={"/images/icons/functional-minimise.png"}

@@ -6,7 +6,7 @@ export const RecycleBin = () => {
   const [recycleBinEmpty, setRecycleBinEmpty] = React.useState(false)
   const [controlMenuVisible, setControlMenuVisible] = React.useState(false)
 
-  const foo = [
+  const action = [
     {
       name: "empty",
       action: () => setRecycleBinEmpty(!recycleBinEmpty),
@@ -18,7 +18,7 @@ export const RecycleBin = () => {
   ]
 
   return (
-    <div className="relative">
+    <div className="relative" data-testid="recycleBin">
       <DesktopIcon
         image={
           recycleBinEmpty
@@ -27,11 +27,10 @@ export const RecycleBin = () => {
         }
         alt="Recycle Bin"
         name="Recycle Bin"
-        /*onClick={() => setRecycleBinEmpty(!recycleBinEmpty)}*/
         onClick={() => setControlMenuVisible(!controlMenuVisible)}
       />
       {controlMenuVisible && (
-        <ControlMenu menuItems={foo} className=" ml-16 " />
+        <ControlMenu menuItems={action} className=" ml-16 " />
       )}
     </div>
   )
