@@ -10,7 +10,6 @@ export interface StartBarProps {
 
 export const StartBar: FC<StartBarProps> = ({}) => {
   const today = new Date()
-  console.log(today)
 
   const [time, setTime] = React.useState("")
 
