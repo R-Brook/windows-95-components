@@ -5,13 +5,15 @@ import Draggable from "react-draggable"
 import { Menu } from "../menu"
 import Image from "next/image"
 import { VerticalDivider } from "components/divider"
+import { TaskButton, TaskButtonLink } from "../taskButtons"
 
 export interface PopupWindowProps {
   title: string
   defaultValue: string
+  fullscreen: boolean
 }
 
-export const Notepad = ({ title, defaultValue, handleNotepad }) => {
+export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
   const nodeRef = React.useRef(null)
 
   const [notePadMaximise, setNotePadMaximise] = React.useState(false)
@@ -21,42 +23,26 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
     setNotePadMinimise(true)
     console.log("minimize " + notePadMinimise)
   }
-
+  /*
   const handleMaximise = () => {
     setNotePadMaximise(!notePadMaximise)
     console.log("maximise " + notePadMaximise)
   }
-
-  const taskButtons = [
-    {
-      image: "/images/icons/functional-minimise.png",
-      alt: "Minimise",
-      interaction: handleMinimise,
-    },
-    {
-      image: "/images/icons/functional-maximise.png",
-      alt: "Maximise",
-      interaction: handleMaximise,
-    },
-    {
-      image: "/images/icons/functional-exit.png",
-      alt: "Exit",
-      interaction: handleNotepad,
-    },
-  ]
-
+*/
   return (
     <Draggable
       bounds="parent"
       handle=".handle"
-      //disabled={notePadMaximise}
+      disabled={fullscreen}
       nodeRef={nodeRef}
     >
       <div
         className={cx(
-          "block absolute bg-gray shadow-button p-1.5 pl-1 z-50 left-32 top-20" +
+          "block absolute bg-gray shadow-button p-1.5 pl-1 z-50" +
             " " +
-            (notePadMaximise ? "top-0 left-0 right-0 " : "w-720")
+            (fullscreen
+              ? "top-0 left-0 right-0 bottom-0"
+              : "left-32 top-20 w-720")
         )}
         ref={nodeRef}
       >
@@ -70,23 +56,37 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
           </div>
           <span>{title}</span>
           <div className="text-black flex gap-x-1 ml-auto">
-            {taskButtons.map((mapItem, key) => (
-              <Button
-                key={key}
-                width="tight"
-                className="relative w-7 h-7 flex flex-center"
-                onClick={mapItem.interaction}
-              >
-                <div className=" w-6 h-6 relative flex flex-center ">
-                  <Image
-                    src={mapItem.image}
-                    alt={mapItem.alt}
-                    layout="fill"
-                    className="relative"
-                  />
-                </div>
-              </Button>
-            ))}
+            <TaskButton
+              image={"/images/icons/functional-minimise.png"}
+              alt={"Minimise"}
+              interaction={handleMinimise}
+            />
+            {fullscreen ? (
+              <TaskButtonLink
+                image={"/images/icons/functional-maximise.png"}
+                alt={"Maximise"}
+                href={"/"}
+              />
+            ) : (
+              <TaskButtonLink
+                image={"/images/icons/functional-maximise.png"}
+                alt={"Maximise"}
+                href={"/notepad"}
+              />
+            )}
+            {fullscreen ? (
+              <TaskButtonLink
+                image={"/images/icons/functional-exit.png"}
+                alt={"Exit"}
+                href="/"
+              />
+            ) : (
+              <TaskButton
+                image={"/images/icons/functional-exit.png"}
+                alt={"Exit"}
+                interaction={handleNotepad}
+              />
+            )}
           </div>
         </div>
 
@@ -96,11 +96,11 @@ export const Notepad = ({ title, defaultValue, handleNotepad }) => {
             <textarea
               id="area"
               name="area"
-              cols={notePadMaximise ? 152 : 103}
-              rows={notePadMaximise ? 25 : 10}
+              cols={fullscreen ? 152 : 103}
+              rows={fullscreen ? 25 : 10}
               defaultValue={defaultValue}
               className={cx(
-                "flex bg-black shadow-button-active" + " " + notePadMaximise
+                "flex bg-black shadow-button-active" + " " + fullscreen
                   ? "resize-none p-1 leading-5"
                   : "resize p-1"
               )}

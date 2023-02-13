@@ -39,7 +39,14 @@ const Home: NextPage = () => {
           name="Notepad"
           onClick={() => setNotepadOpen(true)}
         />
-        {notepadOpen && <Notepad title="Untitled - Notepad" defaultValue={'lorem ipsum'} handleNotepad={handleNotepad} />}
+        {notepadOpen && (
+          <Notepad
+            title="Untitled - Notepad"
+            defaultValue={"lorem ipsum"}
+            handleNotepad={handleNotepad}
+            fullscreen={false}
+          />
+        )}
       </Container>
       <StartBar />
     </>
