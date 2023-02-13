@@ -113,8 +113,8 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                 <Image
                   src={"/images/icons/functional-arrow-disabled.png"}
                   alt={""}
-                  width="15px"
-                  height="18px"
+                  width={15}
+                  height={18}
                   className="relative -rotate-90"
                 />
               </Button>
@@ -133,8 +133,8 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                 <Image
                   src={"/images/icons/functional-arrow-disabled.png"}
                   alt={""}
-                  width="15px"
-                  height="18px"
+                  width={15}
+                  height={18}
                   className="relative rotate-90"
                 />
               </Button>
@@ -150,8 +150,8 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                 <Image
                   src={"/images/icons/functional-arrow-disabled.png"}
                   alt={""}
-                  width="15px"
-                  height="18px"
+                  width={15}
+                  height={18}
                   className="relative rotate-180"
                 />
               </Button>
@@ -163,8 +163,8 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                 <Image
                   src={"/images/icons/functional-arrow-disabled.png"}
                   alt={""}
-                  width="15px"
-                  height="18px"
+                  width={15}
+                  height={18}
                   className="relative"
                 />
               </Button>
