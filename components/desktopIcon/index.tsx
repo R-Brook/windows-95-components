@@ -3,8 +3,8 @@ import Image from "next/image"
 
 export interface DesktopIconProps {
   image: string
-  imageWidth?: string
-  imageHeight?: string
+  imageWidth?: number
+  imageHeight?: number
   alt: string
   name: string
   onClick?: () => void
@@ -14,8 +14,8 @@ export const DesktopIcon: FC<DesktopIconProps> = ({
   image,
   alt,
   name,
-  imageHeight = "48px",
-  imageWidth = "48px",
+  imageHeight = 48,
+  imageWidth = 48,
   onClick,
 }) => {
   return (
