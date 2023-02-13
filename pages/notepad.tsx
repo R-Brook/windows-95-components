@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
+        {/* @TODO: Proper exit fullscreen and minimise functionality */}
         <Notepad
           title="Untitled - Notepad"
           defaultValue={"lorem ipsum"}
