@@ -1,4 +1,5 @@
 @import "base/fonts.css";
+@import "base/animation.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
