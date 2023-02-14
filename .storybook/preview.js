@@ -1,6 +1,6 @@
 import "../css/globals.css"
 
-import * as NextImage from "next/image"
+import * as NextImage from "next/legacy/image";
 
 const OriginalNextImage = NextImage.default
 

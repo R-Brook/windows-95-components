@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Button } from "../buttons"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import { ButtonLink } from "../buttons/ButtonLink"
 
 export interface TaskButtonProps {

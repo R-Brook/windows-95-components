@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import cx from "classnames"
 import { Button } from "../buttons"
 import { VerticalDivider } from "../divider"

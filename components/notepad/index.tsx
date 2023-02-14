@@ -3,7 +3,7 @@ import cx from "classnames"
 import { Button } from "../buttons"
 import Draggable from "react-draggable"
 import { Menu } from "../menu"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import { VerticalDivider } from "components/divider"
 import { TaskButton, TaskButtonLink } from "../taskButtons"
 

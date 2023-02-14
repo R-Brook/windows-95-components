@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image";
 
 export interface DesktopIconProps {
   image: string
