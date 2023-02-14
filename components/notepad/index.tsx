@@ -3,7 +3,7 @@ import cx from "classnames"
 import { Button } from "../buttons"
 import Draggable from "react-draggable"
 import { Menu } from "../menu"
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { VerticalDivider } from "components/divider"
 import { TaskButton, TaskButtonLink } from "../taskButtons"
 
@@ -51,8 +51,8 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
             <Image
               src={"/images/icons/notepad-file.png"}
               alt="notepad icon"
-              layout="fill"
-            />
+              fill
+              sizes="100vw" />
           </div>
           <h1>{title}</h1>
           <div className="text-black flex gap-x-1 ml-auto">
@@ -116,7 +116,10 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                   width={15}
                   height={18}
                   className="relative -rotate-90"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Button>
 
               {/*
@@ -136,7 +139,10 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                   width={15}
                   height={18}
                   className="relative rotate-90"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Button>
             </div>
           </div>
@@ -153,7 +159,10 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                   width={15}
                   height={18}
                   className="relative rotate-180"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Button>
 
               <Button
@@ -166,7 +175,10 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
                   width={15}
                   height={18}
                   className="relative"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </Button>
             </div>
 
@@ -181,5 +193,5 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
         </div>
       </div>
     </Draggable>
-  )
+  );
 }

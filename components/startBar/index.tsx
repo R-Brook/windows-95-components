@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import Image from "next/legacy/image";
+import Image from "next/image"
 import cx from "classnames"
 import { Button } from "../buttons"
 import { VerticalDivider } from "../divider"
@@ -45,7 +45,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
           <Image
             src="/images/start-logo.png"
             alt="Windows 95 logo"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
         <span className="text-xl">Start</span>
@@ -67,7 +68,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/notepad-file.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Programs</span>
@@ -83,7 +85,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/my-documents.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Documents</span>
@@ -99,7 +102,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/settings.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Settings</span>
@@ -115,7 +119,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/find.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Find</span>
@@ -131,7 +136,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/help-book.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Help</span>
@@ -147,7 +153,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/run.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Run...</span>
@@ -163,7 +170,8 @@ export const StartBar: FC<StartBarProps> = ({}) => {
                   <Image
                     src={"/images/icons/shut-down.png"}
                     alt="notepad icon"
-                    layout="fill"
+                    fill
+                    sizes="100vw"
                   />
                 </div>
                 <span className=" pl-4 text-xl">Shut Down...</span>
@@ -178,14 +186,16 @@ export const StartBar: FC<StartBarProps> = ({}) => {
           <Image
             src="/images/icons/desktop.png"
             alt="Desktop icon"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
         <span className="relative h-7 w-7">
           <Image
             src="/images/icons/satellite.png"
             alt="Desktop icon"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
       </div>

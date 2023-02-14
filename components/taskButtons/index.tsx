@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Button } from "../buttons"
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { ButtonLink } from "../buttons/ButtonLink"
 
 export interface TaskButtonProps {
@@ -27,10 +27,10 @@ export const TaskButton: FC<TaskButtonProps> = ({
       onClick={interaction}
     >
       <div className=" w-6 h-6 relative flex flex-center ">
-        <Image src={image} alt={alt} layout="fill" className="relative" />
+        <Image src={image} alt={alt} className="relative" fill sizes="100vw" />
       </div>
     </Button>
-  )
+  );
 }
 
 export const TaskButtonLink: FC<TaskButtonLinkProps> = ({
@@ -45,8 +45,8 @@ export const TaskButtonLink: FC<TaskButtonLinkProps> = ({
       href={href}
     >
       <div className=" w-6 h-6 relative flex flex-center ">
-        <Image src={image} alt={alt} layout="fill" className="relative" />
+        <Image src={image} alt={alt} className="relative" fill sizes="100vw" />
       </div>
     </ButtonLink>
-  )
+  );
 }

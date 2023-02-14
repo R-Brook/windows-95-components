@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export interface DesktopIconProps {
   image: string
@@ -26,9 +26,12 @@ export const DesktopIcon: FC<DesktopIconProps> = ({
         width={imageWidth}
         height={imageHeight}
         className="bottom-1 border-black"
-      />
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
 
       <span className=" text-white mt-1 ">{name}</span>
     </button>
-  )
+  );
 }
