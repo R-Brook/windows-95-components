@@ -1,11 +1,11 @@
 import React from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
-import { Container } from "../components/container"
+import { Container } from "@/components/container"
 
-import { StartBar } from "../components/startBar"
-import { DesktopIcon } from "../components/desktopIcon"
-import { RecycleBin } from "../components/desktopIcon/RecycleBin"
+import { StartBar } from "@/components/startBar"
+import { DesktopIcon } from "@/components/desktopIcon"
+import { RecycleBin } from "@/components/desktopIcon/RecycleBin"
 import { Notepad } from "components/notepad"
 
 const Home: NextPage = () => {

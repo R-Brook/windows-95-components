@@ -21,6 +21,8 @@ module.exports = {
           "-2px -2px 0px 0px rgb(229 238 237) inset, 3px 3px 0px 0px rgb(0, 0, 0) inset",
         "vertical-line":
           "2px 0px 0px 0px rgb(151 151 151) inset, 4px 0px 0px 0px rgb(229 238 237) inset",
+        "horizontal-line":
+          "0px 2px 0px 0px rgb(151 151 151) inset, 0px 4px 0px 0px rgb(229 238 237) inset",
       },
     },
     colors: {
@@ -39,6 +41,7 @@ module.exports = {
     fontFamily: {
       sans: ["windows regular", "sans-serif"],
       mono: ['"Courier New"', "monospace"],
+      simple: ["sans-serif"],
     },
     fontWeight: {
       normal: "400",

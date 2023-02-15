@@ -2,7 +2,8 @@ import React, { FC } from "react"
 import Image from "next/image"
 import cx from "classnames"
 import { Button } from "../buttons"
-import { VerticalDivider } from "../divider"
+import { VerticalDivider } from "@/components/divider"
+import { StartBarMenu } from "@/components/startBarMenu"
 
 export interface StartBarProps {
   //primary: boolean
@@ -12,6 +13,7 @@ export const StartBar: FC<StartBarProps> = ({}) => {
   const today = new Date()
 
   const [startMenuOpen, setStartMenuOpen] = React.useState(false)
+  const [controlMenuVisible, setControlMenuVisible] = React.useState("none")
   const [time, setTime] = React.useState("")
 
   React.useEffect(() => {
@@ -51,135 +53,7 @@ export const StartBar: FC<StartBarProps> = ({}) => {
         </span>
         <span className="text-xl">Start</span>
       </Button>
-      {startMenuOpen && (
-        <div className="absolute left-1 flex bottom-10 bg-gray shadow-button z-50">
-          <div className="relative w-14 m-1 bg-grey-darker">
-            <span className="inline-block w-max origin-bottom-left text-white left-14 bottom-0 absolute  -rotate-90 text-4xl p-2">
-              Windows 95
-            </span>
-          </div>
-          <ul>
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-8 w-8 relative">
-                  <Image
-                    src={"/images/icons/notepad-file.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Programs</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={"/images/icons/my-documents.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Documents</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={"/images/icons/settings.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Settings</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-10 w-10 relative">
-                  <Image
-                    src={"/images/icons/find.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Find</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={"/images/icons/help-book.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Help</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex ">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={"/images/icons/run.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Run...</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              className="relative flex hover:bg-blue hover:text-white px-2 w-full text-left"
-            >
-              <li className="px-4 py-2 flex">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={"/images/icons/shut-down.png"}
-                    alt="notepad icon"
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 text-xl">Shut Down...</span>
-              </li>
-            </a>
-          </ul>
-        </div>
-      )}
+      {startMenuOpen && <StartBarMenu />}
       <VerticalDivider />
       <div className="flex items-center mx-1 mt-0.5 gap-2 ">
         <span className="relative h-7 w-7">
