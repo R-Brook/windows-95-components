@@ -2,7 +2,8 @@ import React, { FC } from "react"
 import Image from "next/image"
 import cx from "classnames"
 import { Button } from "../buttons"
-import { VerticalDivider } from "../divider"
+import { VerticalDivider } from "@/components/divider"
+import { StartBarMenu } from "@/components/startBarMenu"
 
 export interface StartBarProps {
   //primary: boolean
@@ -11,14 +12,16 @@ export interface StartBarProps {
 export const StartBar: FC<StartBarProps> = ({}) => {
   const today = new Date()
 
+  const [startMenuOpen, setStartMenuOpen] = React.useState(false)
+  const [controlMenuVisible, setControlMenuVisible] = React.useState("none")
   const [time, setTime] = React.useState("")
 
   React.useEffect(() => {
     const time = setInterval(() => {
       setTime(
-        new Date().toLocaleString("en-gb", {
+        new Date().toLocaleString("en-us", {
           hour12: true,
-          hour: "2-digit",
+          hour: "numeric",
           minute: "2-digit",
         })
       )
@@ -34,31 +37,39 @@ export const StartBar: FC<StartBarProps> = ({}) => {
   const minutePrintOut = splitTime[1]
 
   return (
-    <div className="bg-gray border-2 border-t-grey-green border-gray inset-0 flex max-w-screen-lg m-auto">
-      <Button width="tight" className="border-0 px-2 mt-0.5 flex items-center">
+    <div className="bg-gray border-2 border-t-grey-green border-gray inset-0 flex max-w-screen-lg m-auto relative">
+      <Button
+        width="tight"
+        className="border-0 px-2 mt-0.5 flex items-center"
+        onClick={() => setStartMenuOpen(!startMenuOpen)}
+      >
         <span className="relative block h-6 w-8 my-1 mr-1 mx-0.5">
           <Image
             src="/images/start-logo.png"
             alt="Windows 95 logo"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
         <span className="text-xl">Start</span>
       </Button>
+      {startMenuOpen && <StartBarMenu />}
       <VerticalDivider />
       <div className="flex items-center mx-1 mt-0.5 gap-2 ">
         <span className="relative h-7 w-7">
           <Image
             src="/images/icons/desktop.png"
             alt="Desktop icon"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
         <span className="relative h-7 w-7">
           <Image
             src="/images/icons/satellite.png"
             alt="Desktop icon"
-            layout="fill"
+            fill
+            sizes="100vw"
           />
         </span>
       </div>

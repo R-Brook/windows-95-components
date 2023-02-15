@@ -1,11 +1,10 @@
 import React from "react"
 import cx from "classnames"
-import { Button } from "../buttons"
+import { Button } from "@/components/buttons"
 import Draggable from "react-draggable"
-import { Menu } from "../menu"
-import Image from "next/image"
-import { VerticalDivider } from "components/divider"
-import { TaskButton, TaskButtonLink } from "../taskButtons"
+import { Menu } from "@/components/menu"
+import Image from "next/legacy/image"
+import { TaskButton, TaskButtonLink } from "@/components/taskButtons"
 
 export interface PopupWindowProps {
   title: string

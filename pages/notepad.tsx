@@ -1,10 +1,9 @@
 import React from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
-import { Container } from "../components/container"
-
-import { StartBar } from "../components/startBar"
-import { Notepad } from "components/notepad"
+import { Container } from "@/components/container"
+import { StartBar } from "@/components/startBar"
+import { Notepad } from "@/components/notepad"
 
 const Home: NextPage = () => {
   return (

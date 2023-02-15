@@ -12,7 +12,9 @@ export default {
 } as ComponentMeta<typeof StartBar>
 
 const Template: ComponentStory<typeof StartBar> = (args) => (
-  <StartBar {...args} />
+  <div className="absolute bottom-32 left-0 w-full ">
+    <StartBar {...args} />
+  </div>
 )
 
 export const StartBarComponent = Template.bind({})
