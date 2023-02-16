@@ -21,36 +21,34 @@ export const StartBarMenu: FC<MenuProps> = ({}) => {
 
         <ul className="flex flex-col">
           {startBarMainMenu.map((mapItem) => (
-            <>
-              <button
-                key={mapItem.name}
-                className="relative  hover:bg-blue hover:text-white pr-1 text-left"
-                onClick={() => {
-                  mapItem.action
-                }}
-              >
-                {mapItem.name === "Shut Down..." && <HorizontalDivider />}
-                <li className=" pl-3 py-2 w-full flex items-center">
-                  <div className="h-12 w-12 relative">
-                    <Image
-                      src={mapItem.file}
-                      alt={mapItem.name}
-                      fill
-                      sizes="100vw"
-                    />
-                  </div>
-                  <span className=" pl-4 pr-10 text-xl">
-                    <span className="underline">
-                      {mapItem.name.charAt(0).toUpperCase()}
-                    </span>
-                    {mapItem.name.slice(1)}
+            <button
+              key={mapItem.name}
+              className="relative  hover:bg-blue hover:text-white pr-1 text-left"
+              onClick={() => {
+                mapItem.action
+              }}
+            >
+              {mapItem.name === "Shut Down..." && <HorizontalDivider />}
+              <li className=" pl-3 py-2 w-full flex items-center">
+                <div className="h-12 w-12 relative">
+                  <Image
+                    src={mapItem.file}
+                    alt={mapItem.name}
+                    fill
+                    sizes="100vw"
+                  />
+                </div>
+                <span className=" pl-4 pr-10 text-xl">
+                  <span className="underline">
+                    {mapItem.name.charAt(0).toUpperCase()}
                   </span>
-                  {mapItem.hasSubMenu && (
-                    <span className="ml-auto mr-1">&#9654;</span>
-                  )}
-                </li>
-              </button>
-            </>
+                  {mapItem.name.slice(1)}
+                </span>
+                {mapItem.hasSubMenu && (
+                  <span className="ml-auto mr-1">&#9654;</span>
+                )}
+              </li>
+            </button>
           ))}
         </ul>
       </div>

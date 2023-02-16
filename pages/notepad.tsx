@@ -4,8 +4,10 @@ import Head from "next/head"
 import { Container } from "@/components/container"
 import { StartBar } from "@/components/startBar"
 import { Notepad } from "@/components/notepad"
+import { useNotepadContents } from "@/services/notepad"
 
 const Home: NextPage = () => {
+  const { notepadFileName } = useNotepadContents()
   return (
     <>
       <Head>
@@ -14,12 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <Container>
         {/* @TODO: Proper exit fullscreen and minimise functionality */}
-        <Notepad
-          title="Untitled - Notepad"
-          defaultValue={"lorem ipsum"}
-          handleNotepad
-          fullscreen
-        />
+        <Notepad handleNotepad fullscreen />
       </Container>
       <StartBar />
     </>

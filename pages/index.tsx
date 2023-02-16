@@ -2,14 +2,15 @@ import React from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { Container } from "@/components/container"
-
 import { StartBar } from "@/components/startBar"
 import { DesktopIcon } from "@/components/desktopIcon"
 import { RecycleBin } from "@/components/desktopIcon/RecycleBin"
 import { Notepad } from "components/notepad"
+import { useNotepadContents } from "@/services/notepad"
 
 const Home: NextPage = () => {
   const [notepadOpen, setNotepadOpen] = React.useState(false)
+  const { notepadFileName } = useNotepadContents()
 
   const handleNotepad = () => {
     setNotepadOpen(false)
@@ -36,16 +37,11 @@ const Home: NextPage = () => {
         <DesktopIcon
           image="/images/icons/notepad.ico"
           alt="Notepad"
-          name="Notepad"
+          name={notepadFileName}
           onClick={() => setNotepadOpen(true)}
         />
         {notepadOpen && (
-          <Notepad
-            title="Untitled - Notepad"
-            defaultValue={"lorem ipsum"}
-            handleNotepad={handleNotepad}
-            fullscreen={false}
-          />
+          <Notepad handleNotepad={handleNotepad} fullscreen={false} />
         )}
       </Container>
       <StartBar />
