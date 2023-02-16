@@ -6,8 +6,6 @@ describe("Notepad", () => {
   it("renders correctly", () => {
     render(
       <Notepad
-        title={"Untitled file"}
-        defaultValue={"lorem ipsum"}
         handleNotepad={() => {
           console.log("logged")
         }}
@@ -16,7 +14,7 @@ describe("Notepad", () => {
     )
 
     const notepad = screen.getByRole("heading", {
-      name: /Untitled file/i,
+      name: /Untitled.txt/i,
     })
     expect(notepad).toBeInTheDocument()
   })

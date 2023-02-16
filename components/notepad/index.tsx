@@ -5,18 +5,19 @@ import Draggable from "react-draggable"
 import { Menu } from "@/components/menu"
 import Image from "next/legacy/image"
 import { TaskButton, TaskButtonLink } from "@/components/taskButtons"
+import { useNotepadContents } from "services/notepad"
 
 export interface PopupWindowProps {
-  title: string
-  defaultValue: string
   fullscreen: boolean
 }
 
-export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
+export const Notepad = ({ handleNotepad, fullscreen }) => {
   const nodeRef = React.useRef(null)
 
   const [notePadMaximise, setNotePadMaximise] = React.useState(false)
   const [notePadMinimise, setNotePadMinimise] = React.useState(false)
+
+  const { notepadFileName, notepadFileContents } = useNotepadContents()
 
   const handleMinimise = () => {
     setNotePadMinimise(true)
@@ -53,7 +54,7 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
               layout="fill"
             />
           </div>
-          <h1>{title}</h1>
+          <h1>{notepadFileName}</h1>
           <div className="text-black flex gap-x-1 ml-auto">
             <TaskButton
               image={"/images/icons/functional-minimise.png"}
@@ -97,7 +98,7 @@ export const Notepad = ({ title, defaultValue, handleNotepad, fullscreen }) => {
               name="area"
               cols={fullscreen ? 152 : 103}
               rows={fullscreen ? 25 : 10}
-              defaultValue={defaultValue}
+              defaultValue={notepadFileContents}
               className={cx(
                 "flex bg-black shadow-button-active" + " " + fullscreen
                   ? "resize-none p-1 leading-5"
