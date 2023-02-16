@@ -1,17 +1,23 @@
 import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { Notepad } from "."
+import { NotepadProvider } from "@/services/notepad"
+import { act } from "react-dom/test-utils"
 
 describe("Notepad", () => {
-  it("renders correctly", () => {
-    render(
-      <Notepad
-        handleNotepad={() => {
-          console.log("logged")
-        }}
-        fullscreen={false}
-      />
-    )
+  it("renders correctly", async () => {
+    await act(async () => {
+      render(
+        <NotepadProvider>
+          <Notepad
+            handleNotepad={() => {
+              console.log("logged")
+            }}
+            fullscreen={false}
+          />
+        </NotepadProvider>
+      )
+    })
 
     const notepad = screen.getByRole("heading", {
       name: /Untitled.txt/i,
