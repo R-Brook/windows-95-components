@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import Image from "next/image"
 import { HorizontalDivider } from "@/components/divider"
 import { startBarMainMenu } from "@/utilities/startBarMainMenu"
+import Link from "next/link"
 
 export interface MenuProps {
   menuItems?: object
@@ -29,25 +30,27 @@ export const StartBarMenu: FC<MenuProps> = ({}) => {
               }}
             >
               {mapItem.name === "Shut Down..." && <HorizontalDivider />}
-              <li className=" pl-3 py-2 w-full flex items-center">
-                <div className="h-12 w-12 relative">
-                  <Image
-                    src={mapItem.file}
-                    alt={mapItem.name}
-                    fill
-                    sizes="100vw"
-                  />
-                </div>
-                <span className=" pl-4 pr-10 text-xl">
-                  <span className="underline">
-                    {mapItem.name.charAt(0).toUpperCase()}
+              <Link href="/shutDown">
+                <li className=" pl-3 py-2 w-full flex items-center">
+                  <div className="h-12 w-12 relative">
+                    <Image
+                      src={mapItem.file}
+                      alt={mapItem.name}
+                      fill
+                      sizes="100vw"
+                    />
+                  </div>
+                  <span className=" pl-4 pr-10 text-xl">
+                    <span className="underline">
+                      {mapItem.name.charAt(0).toUpperCase()}
+                    </span>
+                    {mapItem.name.slice(1)}
                   </span>
-                  {mapItem.name.slice(1)}
-                </span>
-                {mapItem.hasSubMenu && (
-                  <span className="ml-auto mr-1">&#9654;</span>
-                )}
-              </li>
+                  {mapItem.hasSubMenu && (
+                    <span className="ml-auto mr-1">&#9654;</span>
+                  )}
+                </li>
+              </Link>
             </button>
           ))}
         </ul>

@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import cx from "classnames"
+import Link from "next/link"
 
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   width: "wide" | "tight"
@@ -13,7 +14,7 @@ export const ButtonLink: FC<ButtonProps> = ({
   children,
 }) => {
   return (
-    <a
+    <Link
       className={cx(
         className,
         "bg-gray shadow-button group relative active:shadow-button-active py-0.5" +
@@ -24,6 +25,6 @@ export const ButtonLink: FC<ButtonProps> = ({
     >
       <span className="m-0.5 flex absolute group-focus:border-dotted group-focus:border-2 inset-1"></span>
       {children}
-    </a>
+    </Link>
   )
 }

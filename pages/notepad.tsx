@@ -6,7 +6,7 @@ import { StartBar } from "@/components/startBar"
 import { Notepad } from "@/components/notepad"
 import { useNotepadContents } from "@/services/notepad"
 
-const Home: NextPage = () => {
+const NotepadPage: NextPage = () => {
   const { notepadFileName } = useNotepadContents()
   return (
     <>
@@ -23,4 +23,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default NotepadPage
