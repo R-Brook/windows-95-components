@@ -30,7 +30,7 @@ export const StartBarMenu: FC<MenuProps> = ({}) => {
               }}
             >
               {mapItem.name === "Shut Down..." && <HorizontalDivider />}
-              <Link href="/shutDown">
+              <Link href="/shutDownOptions">
                 <li className=" pl-3 py-2 w-full flex items-center">
                   <div className="h-12 w-12 relative">
                     <Image

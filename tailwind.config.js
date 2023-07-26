@@ -49,6 +49,7 @@ module.exports = {
     fontWeight: {
       normal: "400",
       bold: "700",
+      extraBold: "900",
     },
   },
   plugins: [],

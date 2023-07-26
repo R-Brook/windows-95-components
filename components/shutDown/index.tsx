@@ -59,7 +59,7 @@ export const ShutDown = ({}) => {
           <ButtonLink
             width="wide"
             className="relative border-0 mt-0.5 mr-2 flex items-center"
-            href={""}
+            href={"/shutDown"}
           >
             <span className="text-l">Yes</span>
           </ButtonLink>
