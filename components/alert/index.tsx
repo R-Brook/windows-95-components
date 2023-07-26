@@ -13,11 +13,14 @@ export const Alert = ({ title, exit, children, className }) => {
   const nodeRef = React.useRef(null)
 
   return (
-    <Draggable bounds="parent" handle=".handle" nodeRef={nodeRef}>
+    <Draggable
+      bounds="parent"
+      handle=".handle"
+      positionOffset={{ x: "-10%", y: "70%" }}
+      nodeRef={nodeRef}
+    >
       <div
-        className={cx(
-          "block absolute bg-gray shadow-button p-1.5 pl-1 z-50 w-540"
-        )}
+        className={cx("block bg-gray shadow-button p-1.5 pl-1 z-50 w-500")}
         ref={nodeRef}
       >
         <div className="flex justify-between pl-1.5 bg-blue text-white handle items-center">
