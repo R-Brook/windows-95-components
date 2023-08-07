@@ -9,7 +9,7 @@ export interface AlertProps {
   exit: string
 }
 
-export const Alert = ({ title, exit, children, className }) => {
+export const Alert = ({ title, exit, children }) => {
   const nodeRef = React.useRef(null)
 
   return (

@@ -7,12 +7,10 @@ export default {
   component: Alert,
   argTypes: {
     title: { control: "text" },
-    defaultValue: { control: "text" },
   },
   args: {
     children: "Lorem ipsum",
     title: "Alert",
-    defaultValue: "Lorem ipsum",
     exit: "foo",
   },
 } as ComponentMeta<typeof Alert>
