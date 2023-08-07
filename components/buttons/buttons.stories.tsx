@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Button } from "."
 
 export default {
-  title: "UI Elements/Single Button",
+  title: "UI Elements/Button",
   component: Button,
   argTypes: {
     width: {
@@ -23,3 +23,4 @@ const Template: ComponentStory<typeof Button> = (args) => (
 )
 
 export const SingleButton = Template.bind({})
+SingleButton.storyName = "Button"

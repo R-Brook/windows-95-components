@@ -1,5 +1,6 @@
 @import "base/fonts.css";
 @import "base/animation.css";
+@import "ui/radio-buttons.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

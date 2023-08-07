@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        500: "31.25rem",
         540: "35rem",
         608: "38rem",
         720: "45rem",
@@ -19,6 +20,8 @@ module.exports = {
           "-2px -2px 0px 0px rgb(0, 0, 0) inset, 2px 2px 0px 0px rgb(229 238 237) inset, -4px -4px 0px 0px rgb(130, 130, 130) inset",
         "button-active":
           "-2px -2px 0px 0px rgb(229 238 237) inset, 3px 3px 0px 0px rgb(0, 0, 0) inset",
+        "button-radio":
+          "-0.75px -0.75px 0px 0px rgb(229 238 237) inset, 1.5px 1.5px 0px 0px rgb(0, 0, 0) inset",
         "vertical-line":
           "2px 0px 0px 0px rgb(151 151 151) inset, 4px 0px 0px 0px rgb(229 238 237) inset",
         "horizontal-line":
@@ -46,6 +49,7 @@ module.exports = {
     fontWeight: {
       normal: "400",
       bold: "700",
+      extraBold: "900",
     },
   },
   plugins: [],
