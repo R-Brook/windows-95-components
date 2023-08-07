@@ -1,7 +1,9 @@
 import React, { FC } from "react"
 import cx from "classnames"
+
 interface RadioButtonProps extends React.HTMLProps<HTMLInputElement> {
   name: string
+  className?: string
   onChange?: (event) => void
 }
 
