@@ -7,16 +7,18 @@ import Link from "next/link"
 export interface AlertProps {
   title: string
   exit: string
+  positionX: string | number
+  positionY: string
 }
 
-export const Alert = ({ title, exit, children }) => {
+export const Alert = ({ title, exit, positionX, positionY, children }) => {
   const nodeRef = React.useRef(null)
 
   return (
     <Draggable
       bounds="parent"
       handle=".handle"
-      positionOffset={{ x: "-10%", y: "70%" }}
+      positionOffset={{ x: `${positionX}`, y: `${positionY}` }}
       nodeRef={nodeRef}
     >
       <div

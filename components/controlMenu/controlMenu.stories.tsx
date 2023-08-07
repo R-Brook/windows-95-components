@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ControlMenu } from "."
 
 export default {
-  title: "UI Elements/Simple Control Menu",
+  title: "UI Elements/Control Menu",
   component: ControlMenu,
   argTypes: {
     //title: { control: "text" },
@@ -33,3 +33,4 @@ const Template: ComponentStory<typeof ControlMenu> = (args) => (
 )
 
 export const SimpleControlMenu = Template.bind({})
+SimpleControlMenu.storyName = "Control Menu"

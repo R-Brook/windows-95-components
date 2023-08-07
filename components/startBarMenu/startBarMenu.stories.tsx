@@ -22,4 +22,5 @@ const Template: ComponentStory<typeof StartBarMenu> = (args) => (
   </div>
 )
 
-export const SimpleControlMenu = Template.bind({})
+export const StartBarMenuComponent = Template.bind({})
+StartBarMenuComponent.storyName = "Start Bar Menu"

@@ -28,7 +28,12 @@ export const ShutDown = ({}) => {
   return (
     <>
       <div className=" w-full opacity-40 top-0 left-0 right-0 -bottom-11 z-50 absolute bg-black" />
-      <Alert title="Shut Down Windows" exit="/">
+      <Alert
+        title="Shut Down Windows"
+        exit="/"
+        positionX="-10%"
+        positionY="70%"
+      >
         <div className="flex mb-14">
           <div className="h-12 w-12 relative">
             <Image

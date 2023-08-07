@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ButtonLink } from "./ButtonLink"
 
 export default {
-  title: "UI Elements/Single Button Link",
+  title: "UI Elements/Button Link",
   component: ButtonLink,
   argTypes: {
     width: {
@@ -25,3 +25,4 @@ const Template: ComponentStory<typeof ButtonLink> = (args) => (
 )
 
 export const SingleButtonLink = Template.bind({})
+SingleButtonLink.storyName = "Button Link"

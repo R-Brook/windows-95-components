@@ -7,11 +7,16 @@ export default {
   component: Alert,
   argTypes: {
     title: { control: "text" },
+    exit: { control: "text" },
+    positionX: { control: "text" },
+    positionY: { control: "text" },
   },
   args: {
     children: "Lorem ipsum",
     title: "Alert",
-    exit: "foo",
+    exit: "https://github.com/R-Brook/windows-95-components",
+    positionX: "20%",
+    positionY: "50%",
   },
 } as ComponentMeta<typeof Alert>
 
@@ -22,3 +27,4 @@ const Template: ComponentStory<typeof Alert> = (args) => (
 )
 
 export const AlertBox = Template.bind({})
+AlertBox.storyName = "Alert"
