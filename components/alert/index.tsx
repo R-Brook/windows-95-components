@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import cx from "classnames"
 import Draggable from "react-draggable"
 import { TaskButton } from "@/components/taskButtons"
@@ -9,9 +9,16 @@ export interface AlertProps {
   exit: string
   positionX: string | number
   positionY: string
+  children: React.ReactNode
 }
 
-export const Alert = ({ title, exit, positionX, positionY, children }) => {
+export const Alert: FC<AlertProps> = ({
+  title,
+  exit,
+  positionX,
+  positionY,
+  children,
+}) => {
   const nodeRef = React.useRef(null)
 
   return (

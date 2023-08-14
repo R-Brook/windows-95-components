@@ -1,21 +1,20 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { StartBar } from "."
+import type { Meta, StoryObj } from "@storybook/react"
 
-export default {
-  title: "UI Elements/Start Bar",
-  component: StartBar,
-  argTypes: {},
-  args: {
-    label: "Start Bar",
+import { StartBar as StartBarComponent } from "."
+
+const meta: Meta<typeof StartBarComponent> = {
+  title: "UI Elements/StartBar",
+  component: StartBarComponent,
+  parameters: {
+    layout: "centered",
   },
-} as ComponentMeta<typeof StartBar>
+  tags: ["autodocs"],
+  argTypes: {},
+}
 
-const Template: ComponentStory<typeof StartBar> = (args) => (
-  <div className="absolute bottom-32 left-0 w-full ">
-    <StartBar {...args} />
-  </div>
-)
+export default meta
+type Story = StoryObj<typeof StartBarComponent>
 
-export const StartBarComponent = Template.bind({})
-StartBarComponent.storyName = "Start Bar"
+export const StartBar: Story = {
+  args: {},
+}

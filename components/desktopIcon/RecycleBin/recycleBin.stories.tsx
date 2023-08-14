@@ -1,13 +1,17 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { RecycleBin } from "."
+import type { Meta, StoryObj } from "@storybook/react"
 
-export default {
-  title: "UI Elements/Recycle Bin",
-  component: RecycleBin,
-} as ComponentMeta<typeof RecycleBin>
+import { RecycleBin as RecycleBinComponent } from "."
 
-const Template: ComponentStory<typeof RecycleBin> = () => <RecycleBin />
+const meta: Meta<typeof RecycleBinComponent> = {
+  title: "UI Elements/RecycleBin",
+  component: RecycleBinComponent,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+}
 
-export const DesktopRecycleBin = Template.bind({})
-DesktopRecycleBin.storyName = "Recycle Bin"
+export default meta
+type Story = StoryObj<typeof RecycleBinComponent>
+
+export const RecycleBin: Story = {}
