@@ -1,10 +1,13 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Button } from "."
+import type { Meta, StoryObj } from "@storybook/react"
+import { Button as ButtonComponent } from "."
 
-export default {
-  title: "UI Elements/Button",
-  component: Button,
+const meta: Meta<typeof ButtonComponent> = {
+  title: "UI Elements/Buttons/Button",
+  component: ButtonComponent,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
   argTypes: {
     width: {
       options: ["wide", "tight"],
@@ -12,15 +15,14 @@ export default {
     },
     children: { control: "text" },
   },
+}
+
+export default meta
+type Story = StoryObj<typeof ButtonComponent>
+
+export const Button: Story = {
   args: {
     children: "Button",
     width: "wide",
   },
-} as ComponentMeta<typeof Button>
-
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}></Button>
-)
-
-export const SingleButton = Template.bind({})
-SingleButton.storyName = "Button"
+}

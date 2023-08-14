@@ -1,10 +1,14 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { ButtonLink } from "./ButtonLink"
+import type { Meta, StoryObj } from "@storybook/react"
 
-export default {
-  title: "UI Elements/Button Link",
-  component: ButtonLink,
+import { ButtonLink as ButtonLinkComponent } from "./ButtonLink"
+
+const meta: Meta<typeof ButtonLinkComponent> = {
+  title: "UI Elements/Buttons/Button Link",
+  component: ButtonLinkComponent,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
   argTypes: {
     width: {
       options: ["wide", "tight"],
@@ -13,16 +17,15 @@ export default {
     children: { control: "text" },
     href: { type: "string" },
   },
+}
+
+export default meta
+type Story = StoryObj<typeof ButtonLinkComponent>
+
+export const ButtonLink: Story = {
   args: {
     children: "Button",
     width: "wide",
     href: "https://www.bbc.co.uk",
   },
-} as ComponentMeta<typeof ButtonLink>
-
-const Template: ComponentStory<typeof ButtonLink> = (args) => (
-  <ButtonLink {...args}></ButtonLink>
-)
-
-export const SingleButtonLink = Template.bind({})
-SingleButtonLink.storyName = "Button Link"
+}

@@ -1,16 +1,27 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Alert } from "."
+import type { Meta, StoryObj } from "@storybook/react"
 
-export default {
+import { Alert as AlertComponent } from "."
+
+const meta: Meta<typeof AlertComponent> = {
   title: "UI Elements/Alert",
-  component: Alert,
+  component: AlertComponent,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
   argTypes: {
     title: { control: "text" },
     exit: { control: "text" },
     positionX: { control: "text" },
     positionY: { control: "text" },
+    children: { control: "text" },
   },
+}
+
+export default meta
+type Story = StoryObj<typeof AlertComponent>
+
+export const Alert: Story = {
   args: {
     children: "Lorem ipsum",
     title: "Alert",
@@ -18,13 +29,4 @@ export default {
     positionX: "20%",
     positionY: "50%",
   },
-} as ComponentMeta<typeof Alert>
-
-const Template: ComponentStory<typeof Alert> = (args) => (
-  <div className="relative h-720">
-    <Alert {...args}></Alert>
-  </div>
-)
-
-export const AlertBox = Template.bind({})
-AlertBox.storyName = "Alert"
+}

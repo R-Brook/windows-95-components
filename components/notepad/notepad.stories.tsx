@@ -1,25 +1,32 @@
-import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Notepad } from "."
+import { NotepadProvider } from "@/services/notepad"
+import type { Meta, StoryObj } from "@storybook/react"
 
-export default {
-  title: "UI Elements/Notepad App",
-  component: Notepad,
+import { Notepad as NotepadComponent } from "."
+
+const meta: Meta<typeof NotepadComponent> = {
+  title: "UI Elements/Notepad",
+  component: NotepadComponent,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <NotepadProvider>
+        <Story />
+      </NotepadProvider>
+    ),
+  ],
   argTypes: {
-    title: { control: "text" },
-    defaultValue: { control: "text" },
+    fullscreen: { control: "boolean" },
   },
+}
+
+export default meta
+type Story = StoryObj<typeof NotepadComponent>
+
+export const Notepad: Story = {
   args: {
-    children: "Lorem ipsum",
-    title: "Notepad",
-    defaultValue: 'Lorem ipsum'
+    fullscreen: false,
   },
-} as ComponentMeta<typeof Notepad>
-
-const Template: ComponentStory<typeof Notepad> = (args) => (
-  <div className="relative h-720">
-    <Notepad {...args}></Notepad>
-  </div>
-)
-
-export const NotepadApp = Template.bind({})
+}
