@@ -10,6 +10,10 @@ export type Action =
     }
   | {
       type: "save"
+      payload: string
+    }
+  | {
+      type: "new"
       payload: { notepadFileName: string; notepadFileContents: string }
     }
 

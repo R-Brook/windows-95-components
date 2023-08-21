@@ -5,7 +5,11 @@ import Draggable from "react-draggable"
 import { Menu } from "@/components/menu"
 import Image from "next/legacy/image"
 import { TaskButton, TaskButtonLink } from "@/components/taskButtons"
-import { useNotepadContents } from "services/notepad"
+import {
+  useNotepadContents,
+  useNotepadContentsDispatch,
+} from "services/notepad"
+import { useRouter } from "next/router"
 
 export interface PopupWindowProps {
   fullscreen: boolean
@@ -13,11 +17,110 @@ export interface PopupWindowProps {
 
 export const Notepad = ({ handleNotepad, fullscreen }) => {
   const nodeRef = React.useRef(null)
-
-  const [notePadMaximise, setNotePadMaximise] = React.useState(false)
+  const router = useRouter()
   const [notePadMinimise, setNotePadMinimise] = React.useState(false)
-
+  const [tempNotepadFileContents, setTempNotepadFileContents] =
+    React.useState("")
   const { notepadFileName, notepadFileContents } = useNotepadContents()
+  const dispatch = useNotepadContentsDispatch()
+
+  const MENU = {
+    file: [
+      {
+        name: "new",
+        action: () =>
+          dispatch({
+            type: "new",
+            payload: {
+              notepadFileName: "Untitled.txt",
+              notepadFileContents: "",
+            },
+          }),
+      },
+      {
+        name: "open",
+        action: () => console.log("open"),
+      },
+      {
+        name: "save",
+        action: () =>
+          dispatch({
+            type: "save",
+            payload: tempNotepadFileContents,
+          }),
+      },
+      {
+        name: "save as",
+        action: () => console.log("save as"),
+      },
+      {
+        name: "page setup",
+        action: () => console.log("page setup"),
+      },
+      {
+        name: "print",
+        action: () => console.log("print"),
+      },
+      {
+        name: "exit",
+        action: () => (fullscreen ? router.push("/") : handleNotepad()),
+      },
+    ],
+    edit: [
+      {
+        name: "undo",
+        action: () => console.log("undo"),
+      },
+      {
+        name: "cut",
+        action: () => console.log("cut"),
+      },
+      {
+        name: "copy",
+        action: () => console.log("copy"),
+      },
+      {
+        name: "paste",
+        action: () => console.log("paste"),
+      },
+      {
+        name: "delete",
+        action: () => console.log("delete"),
+      },
+      {
+        name: "select all",
+        action: () => console.log("select all"),
+      },
+      {
+        name: "time/date",
+        action: () => console.log("time/date"),
+      },
+      {
+        name: "word wrap",
+        action: () => console.log("word wrap"),
+      },
+    ],
+    search: [
+      {
+        name: "empty",
+        action: () => console.log("foo"),
+      },
+      {
+        name: "foo",
+        action: () => console.log("file closed"),
+      },
+    ],
+    help: [
+      {
+        name: "empty",
+        action: () => console.log("foo"),
+      },
+      {
+        name: "foo",
+        action: () => console.log("file closed"),
+      },
+    ],
+  }
 
   const handleMinimise = () => {
     setNotePadMinimise(true)
@@ -90,7 +193,7 @@ export const Notepad = ({ handleNotepad, fullscreen }) => {
           </div>
         </div>
 
-        <Menu />
+        <Menu menuItems={MENU} />
         <div className="border-t-black border-l-black border-r-white border-b-white border-2">
           <div className="relative flex">
             <textarea
@@ -98,7 +201,11 @@ export const Notepad = ({ handleNotepad, fullscreen }) => {
               name="area"
               cols={fullscreen ? 152 : 103}
               rows={fullscreen ? 25 : 10}
+              key={notepadFileContents}
               defaultValue={notepadFileContents}
+              onChange={(e) =>
+                setTempNotepadFileContents(e.currentTarget.value)
+              }
               className={cx(
                 "flex bg-black shadow-button-active" + " " + fullscreen
                   ? "resize-none p-1 leading-5"

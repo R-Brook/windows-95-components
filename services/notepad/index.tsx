@@ -11,11 +11,17 @@ const reducer = (state: NotepadState, action: Action): NotepadState => {
   switch (action.type) {
     case "start":
       return {
+        ...state,
         ...initialNotepadState,
       }
     case "save":
       return {
         ...state,
+        notepadFileContents: action.payload,
+      }
+    case "new":
+      return {
+        ...initialNotepadState,
         ...action.payload,
       }
     default:
