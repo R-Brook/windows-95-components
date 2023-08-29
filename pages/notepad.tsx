@@ -7,7 +7,7 @@ import { Notepad } from "@/components/notepad"
 import { useNotepadContents } from "@/services/notepad"
 
 const NotepadPage: NextPage = () => {
-  const { notepadFileName } = useNotepadContents()
+  const { file_name } = useNotepadContents()
   return (
     <>
       <Head>

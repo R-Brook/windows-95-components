@@ -1,20 +1,24 @@
 export type NotepadState = {
-  notepadFileName: string
-  notepadFileContents: string
+  file_name: string
+  file_contents: string
+  initialised: boolean
 }
 
 export type Action =
   | {
-      type: "start"
-      payload: { notepadFileName: string; notepadFileContents: string }
+      type: "initialise"
+      payload: { file_name: string }
+    }
+  | {
+      type: "new"
     }
   | {
       type: "save"
       payload: string
     }
   | {
-      type: "new"
-      payload: { notepadFileName: string; notepadFileContents: string }
+      type: "save as"
+      payload: string
     }
 
 export type NotepadDispatch = (action: Action) => void

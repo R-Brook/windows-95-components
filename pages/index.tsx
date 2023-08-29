@@ -11,7 +11,7 @@ import { ShutDown } from "@/components/shutDown"
 
 const Home: NextPage = () => {
   const [notepadOpen, setNotepadOpen] = React.useState(false)
-  const { notepadFileName } = useNotepadContents()
+  const { file_name } = useNotepadContents()
 
   const handleNotepad = () => {
     setNotepadOpen(false)
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         <DesktopIcon
           image="/images/icons/notepad.ico"
           alt="Notepad"
-          name={notepadFileName}
+          name={file_name}
           onClick={() => setNotepadOpen(true)}
         />
         {notepadOpen && (
