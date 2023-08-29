@@ -10,10 +10,9 @@ import {
   useNotepadContentsDispatch,
 } from "services/notepad"
 import { useRouter } from "next/router"
-import { Alert } from "../alert"
 import { Save } from "../save"
 
-export interface PopupWindowProps {
+interface PopupWindowProps {
   fullscreen: boolean
 }
 

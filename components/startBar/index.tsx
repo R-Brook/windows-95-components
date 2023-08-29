@@ -5,7 +5,7 @@ import { Button } from "../buttons"
 import { VerticalDivider } from "@/components/divider"
 import { StartBarMenu } from "@/components/startBarMenu"
 
-export interface StartBarProps {
+interface StartBarProps {
   //primary: boolean
 }
 

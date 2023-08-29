@@ -4,7 +4,7 @@ import Draggable from "react-draggable"
 import { TaskButton } from "@/components/taskButtons"
 import Link from "next/link"
 
-export interface AlertProps extends React.HTMLProps<HTMLDialogElement> {
+interface AlertProps extends React.HTMLProps<HTMLDialogElement> {
   title: string
   exit?: string
   exitFunction?: () => void

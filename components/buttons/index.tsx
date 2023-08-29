@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import cx from "classnames"
 
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   width: "wide" | "tight"
 }
 

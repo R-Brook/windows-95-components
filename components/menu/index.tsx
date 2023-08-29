@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { ControlMenu } from "../controlMenu"
 
-export interface MenuProps {
+interface MenuProps {
   menuItems: object
 }
 

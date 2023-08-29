@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import cx from "classnames"
 import Link from "next/link"
 
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   width: "wide" | "tight"
   href: string
 }
