@@ -10,10 +10,8 @@ export interface StartBarProps {
 }
 
 export const StartBar: FC<StartBarProps> = ({}) => {
-  const today = new Date()
-
   const [startMenuOpen, setStartMenuOpen] = React.useState(false)
-  const [controlMenuVisible, setControlMenuVisible] = React.useState("none")
+
   const [time, setTime] = React.useState("")
 
   React.useEffect(() => {

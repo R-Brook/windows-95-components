@@ -17,9 +17,8 @@ export const ButtonLink: FC<ButtonProps> = ({
     <Link
       className={cx(
         className,
-        "bg-gray shadow-button group relative active:shadow-button-active py-0.5" +
-          " " +
-          (width === "wide" ? " px-6 " : "")
+        `bg-gray shadow-button group relative active:shadow-button-active py-0.5 
+          ${width === "wide" ? "px-6" : ""}`
       )}
       href={href}
     >
