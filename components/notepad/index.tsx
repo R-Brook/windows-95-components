@@ -140,9 +140,9 @@ export const Notepad = ({ handleNotepad, fullscreen }) => {
     <>
       {showSaveAs && (
         <Save
-          title={"Save as"}
+          title={"Save As"}
           exitFunction={() => setShowSaveAs(false)}
-          positionX={"50%"}
+          positionX={"20%"}
           positionY={"50%"}
         >
           foo
