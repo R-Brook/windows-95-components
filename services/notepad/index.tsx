@@ -28,7 +28,8 @@ const reducer = (state: NotepadState, action: Action): NotepadState => {
     case "save as":
       return {
         ...state,
-        file_name: action.payload,
+        file_name: action.payload.file_name,
+        file_contents: action.payload.file_contents,
       }
     default:
       throw new Error("Notepad error, not a valid action")

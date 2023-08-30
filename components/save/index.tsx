@@ -7,6 +7,7 @@ import { Button } from "../buttons"
 import { TextInput } from "../textInput"
 import { DropDown } from "../dropdown"
 import Image from "next/legacy/image"
+import { useNotepadContentsDispatch } from "@/services/notepad"
 
 // http://colfinder.net/materials/Supporting_Distance_Education_Through_Policy_Development/skill/win/win4.htm
 
@@ -17,6 +18,7 @@ interface SaveProps {
   positionY: string | number
   exitFunction?: () => void
   children: React.ReactNode
+  contents: string
 }
 
 export const Save: FC<SaveProps> = ({
@@ -25,9 +27,17 @@ export const Save: FC<SaveProps> = ({
   positionX,
   positionY,
   exitFunction,
+  contents,
   children,
 }) => {
   const nodeRef = React.useRef(null)
+  const dispatch = useNotepadContentsDispatch()
+  const [fileName, setFileName] = React.useState("Untitled")
+
+  React.useEffect(() => {
+    console.log("fileName", fileName)
+  }, [fileName])
+
   return (
     <Draggable
       bounds="parent"
@@ -129,18 +139,30 @@ export const Save: FC<SaveProps> = ({
           </div>
           <div className="flex w-full  justify-between">
             <div className="flex flex-col items-stretch w-full mr-4">
-              <TextInput label="File name" id="file-name" className="mb-2" />
+              <TextInput
+                label="File name"
+                id="file-name"
+                value={fileName}
+                onChange={(event) => setFileName(event.target.value)}
+                className="mb-2"
+              />
               <DropDown label="Save as type" id="save-as-type">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
+                <option>.txt</option>
               </DropDown>
             </div>
             <div className="flex flex-col">
               <Button
                 width="wide"
                 className="relative border-0  mt-0.5 mb-2 flex items-center"
-                onClick={() => console.log("save")}
+                onClick={() =>
+                  dispatch({
+                    type: "save as",
+                    payload: {
+                      file_name: fileName + ".txt",
+                      file_contents: `${contents}`,
+                    },
+                  })
+                }
               >
                 <span className="text-l">Save</span>
               </Button>

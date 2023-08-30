@@ -144,6 +144,7 @@ export const Notepad = ({ handleNotepad, fullscreen }) => {
           exitFunction={() => setShowSaveAs(false)}
           positionX={"20%"}
           positionY={"50%"}
+          contents={tempNotepadData}
         >
           foo
         </Save>

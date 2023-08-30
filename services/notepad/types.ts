@@ -18,7 +18,7 @@ export type Action =
     }
   | {
       type: "save as"
-      payload: string
+      payload: { file_name: string; file_contents: string }
     }
 
 export type NotepadDispatch = (action: Action) => void
