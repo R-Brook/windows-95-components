@@ -6,7 +6,7 @@ interface controlMenuItem {
   action: () => void | null
 }
 
-export interface ControlMenuProps {
+interface ControlMenuProps {
   menuItems: controlMenuItem[]
   className?: any
 }

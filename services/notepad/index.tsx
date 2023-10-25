@@ -2,21 +2,34 @@ import React, { createContext } from "react"
 import { Action, NotepadDispatch, NotepadState } from "./types"
 import localForage from "localforage"
 
-const initialNotepadState = {
-  notepadFileName: "Untitled.txt",
-  notepadFileContents: "Lorem ipsum",
+const initialNotepadState: NotepadState = {
+  file_name: "Untitled.txt",
+  file_contents: "",
+  initialised: false,
 }
 
 const reducer = (state: NotepadState, action: Action): NotepadState => {
   switch (action.type) {
-    case "start":
+    case "initialise":
+      return {
+        ...state,
+        ...action.payload,
+        initialised: true,
+      }
+    case "new":
       return {
         ...initialNotepadState,
       }
     case "save":
       return {
         ...state,
-        ...action.payload,
+        file_contents: action.payload,
+      }
+    case "save as":
+      return {
+        ...state,
+        file_name: action.payload.file_name,
+        file_contents: action.payload.file_contents,
       }
     default:
       throw new Error("Notepad error, not a valid action")
@@ -38,7 +51,7 @@ export const NotepadProvider = ({ children }) => {
         const localStorageNotepadState: NotepadState =
           (await localForage.getItem(NotepadStorageSectionName)) ||
           initialNotepadState
-        dispatch({ type: "start", payload: localStorageNotepadState })
+        dispatch({ type: "initialise", payload: localStorageNotepadState })
       } catch (error) {
         console.log("error getting from storage", error)
       }
@@ -68,10 +81,22 @@ export const NotepadProvider = ({ children }) => {
 
 export const useNotepadContents = (): NotepadState => {
   const context = React.useContext(NotepadStateContext)
+
+  if (context === undefined) {
+    throw new Error("useNotepadContents must be used within a NotepadProvider")
+  }
+
   return context
 }
 
 export const useNotepadContentsDispatch = (): NotepadDispatch => {
   const context = React.useContext(NotepadDispatchContext)
+
+  if (context === undefined) {
+    throw new Error(
+      "useNotepadContentsDispatch must be used within a NotepadProvider"
+    )
+  }
+
   return context
 }

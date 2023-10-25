@@ -1,15 +1,15 @@
 import React, { FC } from "react"
 import { Button } from "../buttons"
-import Image from "next/image";
+import Image from "next/image"
 import { ButtonLink } from "../buttons/ButtonLink"
 
-export interface TaskButtonProps {
+interface TaskButtonProps {
   image: string
   alt: string
   interaction: any
 }
 
-export interface TaskButtonLinkProps {
+interface TaskButtonLinkProps {
   image: string
   alt: string
   href: string
@@ -30,7 +30,7 @@ export const TaskButton: FC<TaskButtonProps> = ({
         <Image src={image} alt={alt} className="relative" fill sizes="100vw" />
       </div>
     </Button>
-  );
+  )
 }
 
 export const TaskButtonLink: FC<TaskButtonLinkProps> = ({
@@ -48,5 +48,5 @@ export const TaskButtonLink: FC<TaskButtonLinkProps> = ({
         <Image src={image} alt={alt} className="relative" fill sizes="100vw" />
       </div>
     </ButtonLink>
-  );
+  )
 }

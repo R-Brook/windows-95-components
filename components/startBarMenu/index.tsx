@@ -4,7 +4,7 @@ import { HorizontalDivider } from "@/components/divider"
 import { startBarMainMenu } from "@/utilities/startBarMainMenu"
 import Link from "next/link"
 
-export interface MenuProps {
+interface MenuProps {
   menuItems?: object
 }
 

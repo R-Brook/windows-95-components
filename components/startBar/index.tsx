@@ -5,15 +5,13 @@ import { Button } from "../buttons"
 import { VerticalDivider } from "@/components/divider"
 import { StartBarMenu } from "@/components/startBarMenu"
 
-export interface StartBarProps {
+interface StartBarProps {
   //primary: boolean
 }
 
 export const StartBar: FC<StartBarProps> = ({}) => {
-  const today = new Date()
-
   const [startMenuOpen, setStartMenuOpen] = React.useState(false)
-  const [controlMenuVisible, setControlMenuVisible] = React.useState("none")
+
   const [time, setTime] = React.useState("")
 
   React.useEffect(() => {

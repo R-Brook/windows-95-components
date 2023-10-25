@@ -1,7 +1,7 @@
 import React, { FC } from "react"
-import Image from "next/image";
+import Image from "next/image"
 
-export interface DesktopIconProps {
+interface DesktopIconProps {
   image: string
   imageWidth?: number
   imageHeight?: number
@@ -28,10 +28,11 @@ export const DesktopIcon: FC<DesktopIconProps> = ({
         className="bottom-1 border-black"
         style={{
           maxWidth: "100%",
-          height: "auto"
-        }} />
+          height: "auto",
+        }}
+      />
 
       <span className=" text-white mt-1 ">{name}</span>
     </button>
-  );
+  )
 }
